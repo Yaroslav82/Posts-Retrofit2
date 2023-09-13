@@ -2,6 +2,7 @@ package org.example.app.controller;
 
 import org.example.app.entity.Post;
 import org.example.app.model.PostModel;
+import org.example.app.utils.AppStarter;
 import org.example.app.utils.Constants;
 import org.example.app.view.PostView;
 import retrofit2.Response;
@@ -22,7 +23,7 @@ public class PostController {
 
     public void getPosts() {
         view.getOutput(readPosts());
-
+        AppStarter.startApp();
     }
 
     public void getPostById() {
@@ -33,7 +34,7 @@ public class PostController {
             output = Constants.WRONG_ID_MSG;
         }
         view.getOutput(output);
-
+        AppStarter.startApp();
     }
 
     private String readPostById(int id) {
